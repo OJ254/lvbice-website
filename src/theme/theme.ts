@@ -15,7 +15,7 @@ export const lightTheme = createTheme({
 
     // Brand/primary action color
     primary: {
-      main: '#6750a4',
+      main: '#008EE6',
       contrastText: '#ffffff',
     },
 
@@ -66,7 +66,7 @@ export const darkTheme = createTheme({
 
     // Brand/primary action color adapted for dark backgrounds
     primary: {
-      main: '#6750a4',
+      main: '#41A5FF',
       contrastText: '#ffffff',
     },
 

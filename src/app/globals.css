@@ -7,27 +7,197 @@
 /* Custom variants */
 @custom-variant dark (&:where(.dark, .dark-mode, .dark *));
 
+/* Root element styling - ensures full viewport coverage */
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+/*
+ * Theme Configuration
+ * Defines all theme variables including colors, typography, and other design tokens
+ */
+@theme {
+    /*!* ===== TYPOGRAPHY ===== *!*/
+    /* defined in  src/app/layout.tsx */
+
+
+    /* ===== FONT SMOOTHING ===== */
+    --webkit-font-smoothing: antialiased; /* Safari */
+    --moz-osx-font-smoothing: grayscale; /* Firefox */
+
+    /* ===== COLOR PALETTE ===== */
+    /*
+     * Color naming convention:
+     * - Primary: Ticet EDU's brand color (Purple)
+     * - Blue: Trust, professionalism (links, info)
+     * - Green: Success, confirmation
+     * - Red: Errors, destructive actions
+     * - Yellow: Warnings, important notices
+     * - Neutral: Text and background colors
+     */
+
+    /* Primary Brand Color - Blue : Represents trust, professionalism, and calm, ideal for links and informative or supportive elements.*/
+    --color-blue-50: #EEF4FF;
+    --color-blue-100: #D8E6FF;
+    --color-blue-200: #B2D1FF;
+    --color-blue-300: #81B9FF;
+    --color-blue-400: #41A5FF; /*hovered*/
+    --color-blue-500: #008EE6; /*default*/
+    --color-blue-600: #0071B8;
+    --color-blue-700: #00538A;
+    --color-blue-800: #003961;
+    --color-blue-900: #001F38;
+    --color-blue-950: #072a4a;
+
+    /*Green [Success]: Signals growth, success, and progress, used for confirmations and positive actions.*/
+    --color-green-50: #f0fdf5;
+    --color-green-100: #dcfce8;
+    --color-green-200: #bbf7d1;
+    --color-green-300: #86efad;
+    --color-green-400: #49df80; /*hovered*/
+    --color-green-500: #21c45d; /*default*/
+    --color-green-600: #15a44a;
+    --color-green-700: #15803c;
+    --color-green-800: #166533;
+    --color-green-900: #14532b;
+
+    /*Red [Destructive]: Signals errors or critical actions that require user attention.*/
+    --color-red-50: #fef2f2;
+    --color-red-100: #fee2e2;
+    --color-red-200: #fecaca;
+    --color-red-300: #fca5a5;
+    --color-red-400: #f87171;
+    --color-red-500: #ef4444; /*hovered*/
+    --color-red-600: #dc2626; /*default*/
+    --color-red-700: #b91c1c;
+    --color-red-800: #991b1b;
+    --color-red-900: #7f1d1d;
+
+    /*Yellow [Warning]: Indicates caution or important notices that users should be aware of.*/
+    --color-yellow-50: #fffeea;
+    --color-yellow-100: #fffac5;
+    --color-yellow-200: #fff585;
+    --color-yellow-300: #ffe946;
+    --color-yellow-400: #ffda1b; /*hovered*/
+    --color-yellow-500: #fab600; /*default*/
+    --color-yellow-600: #e28f00;
+    --color-yellow-700: #bb6402;
+    --color-yellow-800: #984d08;
+    --color-yellow-900: #7c3f0b;
+
+    /*Neutral Colors [Texts]: Mostly used for texts.*/
+    --color-neutral-50: #fafafa;
+    --color-neutral-100: #f5f5f5; /*Primary text color in dark theme*/
+    --color-neutral-200: #e5e5e5;
+    --color-neutral-300: #d4d4d4; /*Secondary text color in dark theme*/
+    --color-neutral-400: #a3a3a3;
+    --color-neutral-500: #737373; /*Tertiary text color in either dark or light theme*/
+    --color-neutral-600: #525252;
+    --color-neutral-700: #404040; /*Secondary text color in light theme*/
+    --color-neutral-800: #262626;
+    --color-neutral-900: #171717; /*Primary text color in light theme*/
+    --color-neutral-950: #0a0a0a;
+
+    /* ===== THEME-SPECIFIC COLORS ===== */
+    /* Light Theme */
+    --color-body-light: #edf2f6; /* Page background */
+    --color-container-light-default: #f8fafc; /* Default container background */
+    --color-container-light-hovered: #f5f5f5; /* Hovered container background */
+    --color-navbar-sidebar-light: #3f4257; /* Navbar & sidebar background */
+    --color-borders-light: #d1d5db; /* Border color */
+    --color-header-footer-bg: #3f4257; /* Header/Footer background */
+
+    /* Dark Theme */
+    --color-body-dark: #121419; /* Page background */
+    --color-container-dark-default: #1b1d24; /* Default container background */
+    --color-container-dark-hovered: #20232b; /* Hovered container background */
+    --color-navbar-sidebar-dark: #2f303c; /* Navbar & sidebar background */
+    --color-borders-dark: #343946; /* Border color */
+    --color-header-footer-dark-bg: #2f303c; /* Header/Footer background */
+
+    /* Universal Colors */
+    --color-universal-white: #ffffff; /* Pure white */
+    --color-universal-gray: #a3a7c3; /* Standard gray */
+    --color-universal-black: #000000; /* Pure black */
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+/*
+ * Base HTML & Body Styles
+ */
+
+/* Smooth scrolling for better UX */
+html,
+body,
+#__next {
+    scroll-behavior: smooth;
+    height: 100%;
 }
 
-body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+/*
+ * Body Styles
+ * Applies Roboto font and theme-aware background colors
+ */
+body,
+.body {
+    @apply bg-body-light dark:bg-body-dark overflow-x-hidden;
+}
+
+.max-w-8xl {
+    max-width: 1280px;
+}
+
+.max-w-9xl {
+    max-width: 1400px;
+}
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply antialiased tracking-wide;
+}
+
+/*
+ * Typography - Headings
+ * Consistent heading styles with responsive sizing
+ */
+
+h4 {
+    @apply antialiased text-xl md:text-2xl lg:text-3xl font-semibold;
+}
+
+h5 {
+    @apply antialiased text-lg lg:text-xl xl:text-2xl font-bold;
+}
+
+h6 {
+    @apply antialiased tracking-wide text-lg font-bold;
+}
+
+p { @apply antialiased text-sm lg:text-base font-normal; }
+
+.primary-text {
+    @apply text-neutral-900 dark:text-neutral-100;
+}
+
+.secondary-text {
+    @apply text-neutral-600 dark:text-neutral-400;
 }
