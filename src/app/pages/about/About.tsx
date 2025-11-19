@@ -8,6 +8,9 @@ import AboutSection from './(sections)/AboutSection';
 import StatsSection from '@/app/pages/about/(sections)/StatsSection';
 import ThemesSection from '@/app/pages/about/(sections)/ThemesSection';
 import PartnersSection from '@/app/pages/about/(sections)/PartnersSection';
+import ArticlesSection from '@/app/pages/about/(sections)/ArticlesSection';
+import ContactSection from '@/app/pages/about/(sections)/ContactSection';
+import Footer from '@/app/pages/about/(sections)/Footer';
 
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -94,11 +97,11 @@ const About = () => {
         {/*<section id='speakers'>Speakers</section>*/}
         <ThemesSection id='themes' className='w-full' />
         <PartnersSection id='partners' className='w-full' />
-        <section id='latest-news'>Latest News</section>
-        <section id='contact'>Contact</section>
+        <ArticlesSection id='latest-news' className='w-full' />
+        <ContactSection id='contact' className='w-full' />
       </main>
 
-      <footer>Footer</footer>
+      <Footer className='w-full' />
     </div>
   );
 };

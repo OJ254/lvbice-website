@@ -142,7 +142,7 @@ body,
  */
 body,
 .body {
-    @apply bg-body-light dark:bg-body-dark overflow-x-hidden;
+    @apply bg-gray-50 dark:bg-gray-900 overflow-x-hidden;
 }
 
 .max-w-8xl {
@@ -192,12 +192,18 @@ h6 {
     @apply antialiased tracking-wide text-lg font-bold;
 }
 
-p { @apply antialiased text-sm lg:text-base font-normal; }
-
 .primary-text {
     @apply text-neutral-900 dark:text-neutral-100;
 }
 
 .secondary-text {
     @apply text-neutral-600 dark:text-neutral-400;
+}
+
+.surface {
+    @apply bg-blue-50/70 dark:bg-blue-800/80;
+}
+
+.surface-hover {
+    @apply hover:bg-blue-100/80 dark:hover:bg-blue-700/90;
 }
