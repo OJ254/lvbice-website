@@ -61,7 +61,7 @@ const About = () => {
     <div className='relative' id='about' tabIndex={-1}>
       {/* Header */}
       <header
-        className='fixed top-0 z-50 flex w-full items-center justify-center px-20 py-2 transition-all duration-300 lg:py-4'
+        className='fixed top-0 z-50 flex w-full items-center justify-center py-2 transition-all duration-300 lg:py-4 xl:px-0'
         style={{
           backgroundColor: `rgba(59, 130, 246, ${opacity})`,
           backdropFilter: opacity > 0 ? 'blur(10px)' : 'none',
