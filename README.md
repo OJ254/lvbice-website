@@ -1,85 +1,103 @@
-# Next.js 16 + TypeScript + Tailwind CSS + Material UI Starter Template
+<img src="./src/assets/images/LVBICE-logo-blue.png" alt="LVBICE" width="25%" /> <br />
+# Lake Victoria Basin International Conference and Exhibition (LVBICE) 2026
 
----
+Official website for the Lake Victoria Basin International Conference and Exhibition (LVBICE) 2026. This platform serves as the digital hub for the conference, providing information about the event, registration details, speakers, and more.
 
-This is a [Next.js](https://nextjs.org) starter template bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), updated to use **TypeScript**, **Tailwind CSS 4**, **ESLint**, and **Prettier** for a clean and modern development setup.
+## 📅 Event Details
 
----
+- **Event**: Lake Victoria Basin International Conference and Exhibition (LVBICE) 2026
+- **Theme**: "Harnessing Artificial Intelligence for Sustainable Development in the Lake Victoria Basin"
+- **Date**: October 2026
+- **Venue**: Acacia Hotel, Kisumu, Kenya
 
-## Getting Started
+## 🚀 Features
 
-First, run the development server:
+- Modern, responsive design built with Next.js and React 19
+- Type-safe development with TypeScript
+- Styled with Tailwind CSS and Material-UI components
+- Optimized for performance and SEO
+- Interactive UI components and animations
+- Contact form and registration system
+- Information about speakers, schedule, and venue
 
-```bash
-npm run dev
+## 🛠️ Tech Stack
+
+### Core Technologies
+- [Next.js 16.0.3](https://nextjs.org/) - The React Framework for Production
+- [React 19.2.0](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [TypeScript 5](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Tailwind CSS 4](https://tailwindcss.com/) - A utility-first CSS framework
+- [Material-UI 7.3.5](https://mui.com/) - React components for faster and easier web development
+
+### Development Tools
+- [ESLint](https://eslint.org/) - For code linting
+- [Prettier](https://prettier.io/) - For code formatting
+- [PostCSS](https://postcss.org/) - For CSS processing
+- [Swiper](https://swiperjs.com/) - For touch slider components
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18.0.0 or later
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/OJ254/lvbice-website.git
+   cd lvbice-website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   next dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # App router directory
+│   └── pages/              # Main pages
+│       └── about/          # About page and its sections
+├── components/             # Reusable components
+│   └── general/            # General components
+│       └── Header/         # Header component
+├── public/                 # Static files
+└── theme/                  # Theme configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+## 🛠️ Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page
-auto-updates as you edit the file.
+- `npm run dev` - Start the development server
+- `npm run build` - Build the application for production
+- `npm start` - Start the production server
+- `npm run lint` - Run ESLint
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-to automatically optimize and load [Geist](https://vercel.com/font), a new font
-family for Vercel.
+## 🤝 Contributing
 
----
+Contributions are welcome! Please follow these steps:
 
-## **Dependencies**
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This project includes the following main dependencies:
+## 📄 License
 
-### **Core Dependencies**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- [Next.js 16.0.3](https://nextjs.org/)
-- [React 19.2.0](https://reactjs.org/)
-- [React DOM 19.2.0](https://reactjs.org/)
+## 📧 Contact
 
-### **Development Dependencies**
-
-- [TypeScript 5](https://www.typescriptlang.org/)
-- [Tailwind CSS 4](https://tailwindcss.com/)
-- [@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss)
-- [ESLint 9](https://eslint.org/)
-- [eslint-config-next 16.0.3](https://www.npmjs.com/package/eslint-config-next)
-- [Prettier 3.6.2](https://prettier.io/)
-- [prettier-plugin-tailwindcss 0.7.1](https://www.npmjs.com/package/prettier-plugin-tailwindcss)
-- [@types/node 20](https://www.npmjs.com/package/@types/node)
-- [@types/react 19](https://www.npmjs.com/package/@types/react)
-- [@types/react-dom 19](https://www.npmjs.com/package/@types/react-dom)
-
-### **Project Scripts**
-
-- `dev` - start development server
-- `build` - create production build
-- `start` - run production server
-- `lint` - run ESLint
-
----
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js) - your
-feedback and contributions are welcome!
-
----
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
-
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+For more information about the conference, please contact [info@lvbice.com](mailto:info@lvbice.com)

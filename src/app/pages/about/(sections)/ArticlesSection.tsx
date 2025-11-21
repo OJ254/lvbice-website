@@ -1,3 +1,5 @@
+// @/src/app/pages/about/(sections)/ArticlesSection.tsx
+
 'use client';
 
 import { Typography, Button } from '@mui/material';
@@ -27,7 +29,7 @@ const articlesItems: ArticleItem[] = [
     description:
       'Artificial Intelligence offers new solutions for water management, agriculture, and climate resilience in the Lake Victoria Basin. Technologies such as smart irrigation, predictive weather analytics, leak detection, and digital governance can address rising environmental pressures. LVBICE 2026 will bring governments, researchers, and innovators together to showcase these tools and strengthen sustainable development across the region.',
     image: WaterAI,
-    href: '/articles/ai-for-lake-victoria',
+    href: '/pages/about/blog/ai-for-lake-victoria',
   },
   {
     title:
@@ -35,7 +37,7 @@ const articlesItems: ArticleItem[] = [
     description:
       'COP28 and COP29 produced major global commitments that directly impact climate action in East Africa. Key outcomes include a new USD 300 billion climate finance goal, improved carbon market mechanisms, and wide support for methane reduction. These decisions create opportunities for the Lake Victoria Basin to access funding, strengthen adaptation efforts, and integrate advanced technologies into climate and water governance.',
     image: CopSummit,
-    href: '/articles/cop28-cop29-east-africa',
+    href: '/pages/about/blog/cop28-cop29-east-africa',
   },
   {
     title:
@@ -43,7 +45,7 @@ const articlesItems: ArticleItem[] = [
     description:
       'The 2025 Lake Victoria State of the Basin findings reveal worsening pollution, ecosystem stress, climate impacts, and human pressure on the lake. Despite supporting millions of livelihoods, the basin faces declining water quality, biodiversity loss, and management challenges. The report provides data-driven recommendations such as wetland restoration, sustainable agriculture, better wastewater control, and stronger regional governance.',
     image: LakeCrisis,
-    href: '/articles/lake-victoria-2025',
+    href: '/pages/about/blog/lake-victoria-2025',
   },
   {
     title:
@@ -51,7 +53,7 @@ const articlesItems: ArticleItem[] = [
     description:
       'LVBICE 2026 is positioned as a major regional forum for advancing innovation and sustainability in the Lake Victoria Basin. The event focuses on AI-driven water systems, precision agriculture, climate-smart infrastructure, carbon financing, and public–private partnerships. Participants will collaborate on new policies, investments, and technologies aimed at transforming environmental management and regional development.',
     image: ConferenceImg,
-    href: '/articles/lvbice-2026',
+    href: '/pages/about/blog/lvbice-2026',
   },
 ];
 

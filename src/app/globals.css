@@ -142,7 +142,7 @@ body,
  */
 body,
 .body {
-    @apply bg-gray-50 dark:bg-gray-900 overflow-x-hidden;
+    @apply bg-body-light dark:bg-body-dark overflow-x-hidden;
 }
 
 .max-w-8xl {
