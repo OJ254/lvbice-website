@@ -10,6 +10,7 @@ const WhatsAppLogo = (props: React.SVGProps<SVGSVGElement>) => {
       viewBox='0 0 41 40'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
+      className='cursor-pointer transition-transform duration-300 hover:scale-110'
       {...props}
     >
       <path

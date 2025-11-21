@@ -102,11 +102,42 @@ const Footer = ({ id = '', className = '' }: FooterProps) => {
               Follow Us:
             </Typography>
             <div className='flex h-16 gap-4'>
-              <FacebookLogo />
-              <LinkedInLogo />
-              <TwitterLogo />
-              <WhatsAppLogo />
-              <YouTubeLogo />
+              <a
+                href='https://www.facebook.com/profile.php?id=61583658826862'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FacebookLogo />
+              </a>
+              <a
+                href='https://www.linkedin.com/company/lvbice/about/?viewAsMember=true'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <LinkedInLogo />
+              </a>
+              <a
+                href='https://x.com/lvbice/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <TwitterLogo />
+              </a>
+              <a
+                href='https://wa.me/254116126133'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <WhatsAppLogo />
+              </a>
+
+              <a
+                href='https://www.youtube.com/@LVBICE'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <YouTubeLogo />
+              </a>
             </div>
           </div>
         </div>

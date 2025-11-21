@@ -94,6 +94,23 @@ const Hero = ({
     { value: seconds, label: 'seconds' },
   ];
 
+  // SCROLL FUNCTION
+  const scrollToSection = (id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
+  const downloadConceptPaper = () => {
+    const driveFileId = 'YOUR_FILE_ID';
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${driveFileId}`;
+    window.open(downloadUrl, '_blank');
+  };
+
   return (
     <div
       id={id}
@@ -135,20 +152,55 @@ const Hero = ({
             </div>
 
             {/*TODO: Implement online registration by creating a linking the form to a Google Sheet file*/}
+            {/* Register → contact */}
             <Button
               variant='contained'
               color='success'
               className='text-white transition-colors duration-300'
+              onClick={() => {
+                scrollToSection('contact');
+              }}
             >
               Register
             </Button>
 
             <div className='flex h-16 gap-4'>
-              <FacebookLogo />
-              <LinkedInLogo />
-              <TwitterLogo />
-              <WhatsAppLogo />
-              <YouTubeLogo />
+              <a
+                href='https://www.facebook.com/profile.php?id=61583658826862'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FacebookLogo />
+              </a>
+              <a
+                href='https://www.linkedin.com/company/lvbice/about/?viewAsMember=true'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <LinkedInLogo />
+              </a>
+              <a
+                href='https://x.com/lvbice/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <TwitterLogo />
+              </a>
+              <a
+                href='https://wa.me/254116126133'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <WhatsAppLogo />
+              </a>
+
+              <a
+                href='https://www.youtube.com/@LVBICE'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <YouTubeLogo />
+              </a>
             </div>
           </div>
 
@@ -157,7 +209,7 @@ const Hero = ({
           {/*  image*/}
           {/*</div>*/}
 
-          <div className='absolute right-0 bottom-20 left-0 opacity-10 md:left-40'>
+          <div className='absolute right-0 bottom-20 left-0 -z-10 opacity-10 md:left-40'>
             <Typography
               variant='h1'
               className='text-center font-black text-white md:text-left'
@@ -221,6 +273,13 @@ const Hero = ({
                 key={item}
                 variant='text'
                 className={`${textColor} transition-colors duration-300`}
+                onClick={() => {
+                  if (item === 'Download the Concept Paper') {
+                    downloadConceptPaper();
+                  } else {
+                    scrollToSection('contact');
+                  }
+                }}
               >
                 {item}
               </Button>

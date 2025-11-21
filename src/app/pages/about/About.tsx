@@ -92,13 +92,13 @@ const About = () => {
 
       {/* Main content */}
       <main className='mt-56 flex w-full flex-col items-center justify-center md:mt-28'>
-        <AboutSection id='about' className='w-full' />
-        <StatsSection id='stats' className='w-full' />
+        <AboutSection id='about' className='w-full scroll-mt-28' />
+        <StatsSection id='stats' className='w-full scroll-mt-28' />
         {/*<section id='speakers'>Speakers</section>*/}
-        <ThemesSection id='themes' className='w-full' />
-        <PartnersSection id='partners' className='w-full' />
-        <ArticlesSection id='latest-news' className='w-full' />
-        <ContactSection id='contact' className='w-full' />
+        <ThemesSection id='themes' className='w-full scroll-mt-28' />
+        <PartnersSection id='partners' className='w-full scroll-mt-28' />
+        <ArticlesSection id='latest-news' className='w-full scroll-mt-28' />
+        <ContactSection id='contact' className='w-full scroll-mt-28' />
       </main>
 
       <Footer className='w-full' />

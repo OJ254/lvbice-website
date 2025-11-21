@@ -26,7 +26,7 @@ export const lightTheme = createTheme({
     },
 
     // Status colors
-    success: { main: '#16a34a' },
+    success: { main: '#21c45d' },
     warning: { main: '#f59e0b' },
     error: { main: '#dc2626' },
     info: { main: '#0284c7' },
@@ -77,7 +77,7 @@ export const darkTheme = createTheme({
     },
 
     // Status colors
-    success: { main: '#22c55e' },
+    success: { main: '#21c45d' },
     warning: { main: '#fbbf24' },
     error: { main: '#ef4444' },
     info: { main: '#38bdf8' },
