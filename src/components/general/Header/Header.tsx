@@ -121,6 +121,7 @@ const Header = ({ textColor = 'text-white' }: HeaderProps) => {
 
         <div className='mt-6 flex flex-col gap-4'>
           {/* Mobile Register Button */}
+          {/*TODO: Implement online registration by creating a linking the form to a Google Sheet file*/}
           <Button
             variant='contained'
             color='success'

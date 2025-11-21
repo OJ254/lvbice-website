@@ -118,24 +118,30 @@ const Hero = ({
             </div>
 
             <div className='flex flex-col items-center justify-center gap-2 md:items-start'>
-              <Typography variant='body1' className='text-lg text-white'>
+              <Typography
+                variant='body1'
+                className='text-center text-lg text-white'
+              >
                 <span className='font-bold'>Venue:</span> {venue}
               </Typography>
-              <Typography variant='body1' className='text-lg text-white'>
+              <Typography
+                variant='body1'
+                className='text-center text-lg text-white'
+              >
                 <span className='font-bold'>Date:</span> October 2026
                 {/*TODO: enable once exact dates are confirmed*/}
                 {/*<span className='font-bold'>Date:</span> {date}*/}
               </Typography>
             </div>
 
-            {/*TODO: enable once registration process is initialized*/}
-            {/*<Button*/}
-            {/*  variant='contained'*/}
-            {/*  color='success'*/}
-            {/*  className='text-white transition-colors duration-300'*/}
-            {/*>*/}
-            {/*  Register*/}
-            {/*</Button>*/}
+            {/*TODO: Implement online registration by creating a linking the form to a Google Sheet file*/}
+            <Button
+              variant='contained'
+              color='success'
+              className='text-white transition-colors duration-300'
+            >
+              Register
+            </Button>
 
             <div className='flex h-16 gap-4'>
               <FacebookLogo />
