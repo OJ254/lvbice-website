@@ -41,7 +41,7 @@ const PartnersSection = ({ id = '', className = '' }: PartnersSectionProps) => {
             ))}
           </div>
 
-          <Typography variant='h5' className='mb-4 text-center font-semibold'>
+          <Typography variant='h4' className='mb-4 text-center font-semibold'>
             LVBICE 2026 Partners
           </Typography>
 

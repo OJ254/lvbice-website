@@ -12,23 +12,23 @@ export default function Article4() {
       <div className='relative h-96 w-full min-w-full'>
         <Image
           src={ConferenceImg}
-          alt='LVBICE 2026 Conference'
+          alt='Why LVBICE 2026 Matters: A Regional Turning Point for Innovation, Climate Action, and Inclusive Development'
           fill
           className='rounded-t-lg object-cover object-center'
           priority
         />
       </div>
 
-      <div className='max-w-3xl px-4 py-10'>
+      <div className='max-w-4xl px-4 py-10'>
         {/* Title */}
-        <Typography variant='h3' component='h1' className='mb-6 font-bold'>
+        <Typography variant='h1' className='mb-6 font-bold'>
           Why LVBICE 2026 Matters: A Regional Turning Point for Innovation,
           Climate Action, and Inclusive Development
         </Typography>
 
         {/* Summary Section */}
         <Divider className='my-6' />
-        <Typography variant='h5' component='h2' className='mb-3 font-semibold'>
+        <Typography variant='h5' className='mb-3 font-semibold'>
           Summary
         </Typography>
         <Typography variant='body1' className='mb-6'>
@@ -37,7 +37,7 @@ export default function Article4() {
           thematic focus areas, expected outcomes, and why it represents a major
           opportunity for East Africa to reshape its development trajectory.
         </Typography>
-        <Typography className='mb-4 text-gray-600 italic'>
+        <Typography color='textSecondary' className='mb-4 italic'>
           Estimated Read Time: 8 minutes
         </Typography>
 
@@ -155,7 +155,7 @@ export default function Article4() {
 
         {/* References Section */}
         <Divider className='my-6' />
-        <Typography variant='h6' component='h3' className='mb-3 font-semibold'>
+        <Typography variant='h6' className='mb-3 font-semibold'>
           References
         </Typography>
 

@@ -1,3 +1,5 @@
+// src/app/pages/about/About.tsx
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -56,6 +58,21 @@ const About = () => {
   const opacity = Math.min(scrollY / maxScroll, 1);
 
   const textColor = 'text-white hover:text-[#E68600]';
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+
+    const interval = setInterval(() => {
+      const target = document.getElementById(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        clearInterval(interval);
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className='relative' id='about' tabIndex={-1}>

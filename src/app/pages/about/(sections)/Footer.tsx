@@ -23,7 +23,7 @@ const Footer = ({ id = '', className = '' }: FooterProps) => {
     >
       <div className='max-w-9xl flex w-full flex-col items-center justify-center gap-10 px-4 py-16 text-white lg:px-0 lg:py-20'>
         <div>
-          <Typography variant='h6' className='line-clamp-3'>
+          <Typography variant='h5' className='line-clamp-3'>
             About LVBICE
           </Typography>
           <Typography variant='body2' className='line-clamp-5'>

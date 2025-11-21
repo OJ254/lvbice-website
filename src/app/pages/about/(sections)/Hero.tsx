@@ -121,7 +121,7 @@ const Hero = ({
           <div className='flex w-full flex-col items-center justify-center gap-6 md:max-w-3/4 md:items-start md:gap-8 xl:gap-10'>
             <div className='flex flex-col gap-4'>
               <Typography
-                variant='h4'
+                variant='h1'
                 className='text-center font-semibold text-white md:text-left'
               >
                 {eventName}
@@ -209,10 +209,10 @@ const Hero = ({
           {/*  image*/}
           {/*</div>*/}
 
-          <div className='absolute right-0 bottom-20 left-0 -z-10 opacity-10 md:left-40'>
+          <div className='absolute right-0 bottom-20 left-0 -z-10 opacity-10 lg:left-40'>
             <Typography
-              variant='h1'
-              className='text-center font-black text-white md:text-left'
+              variant='caption'
+              className='text-center text-7xl font-black text-white md:text-left lg:text-8xl 2xl:text-9xl'
             >
               LVBICE 2026
             </Typography>
@@ -229,15 +229,15 @@ const Hero = ({
                 <React.Fragment key={unit.label}>
                   <div className='flex flex-col items-center'>
                     <Typography
-                      variant='h3'
-                      className='text-center font-semibold text-white md:w-28'
+                      variant='h1'
+                      className='text-center text-white md:w-28'
                       style={{ fontFamily: 'var(--font-geist-mono)' }}
                     >
                       {unit.value}
                     </Typography>
                     <Typography
-                      variant='h2'
-                      className='text-center text-sm font-semibold text-white md:w-28'
+                      variant='h5'
+                      className='text-center text-white md:w-28'
                     >
                       {unit.label}
                     </Typography>

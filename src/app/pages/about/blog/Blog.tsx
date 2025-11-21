@@ -9,6 +9,21 @@ import Footer from '@/app/pages/about/(sections)/Footer';
 export default function Blog({ children }: { children: ReactNode }) {
   const textColor = 'text-white hover:text-[#E68600]';
 
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+
+    const interval = setInterval(() => {
+      const target = document.getElementById(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        clearInterval(interval);
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className='relative'>
       <header

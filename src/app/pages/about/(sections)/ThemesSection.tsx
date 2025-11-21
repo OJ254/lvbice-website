@@ -110,7 +110,7 @@ const ThemesSection = ({ id = '', className = '' }: ThemesSectionProps) => {
 
           {/* Section Header */}
           <header className='mb-8 flex w-full flex-col items-center justify-center space-y-4'>
-            <Typography variant='h5' className='text-center font-semibold'>
+            <Typography variant='h4' className='text-center font-semibold'>
               What We Will Speak About
             </Typography>
             <div className='flex w-full flex-col items-center justify-center md:flex-row md:justify-between md:gap-4 lg:max-w-2xl'>

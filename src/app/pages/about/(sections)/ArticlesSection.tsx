@@ -113,7 +113,7 @@ const ArticlesSection = ({ id = '', className = '' }: ArticlesSectionProps) => {
 
           {/* Section Header */}
           <header className='mb-8 flex w-full flex-col items-center justify-center space-y-4'>
-            <Typography variant='h5' className='text-center font-semibold'>
+            <Typography variant='h4' className='text-center font-semibold'>
               Latest News
             </Typography>
           </header>

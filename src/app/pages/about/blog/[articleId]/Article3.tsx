@@ -12,23 +12,23 @@ export default function Article3() {
       <div className='relative h-96 w-full min-w-full'>
         <Image
           src={LakeCrisis}
-          alt='Lake Victoria aerial view'
+          alt='The Alarming State of the Lake Victoria Basin and Why 2025 Was a Turning Point'
           fill
           className='rounded-t-lg object-cover object-center'
           priority
         />
       </div>
 
-      <div className='max-w-3xl px-4 py-10'>
+      <div className='max-w-4xl px-4 py-10'>
         {/* Title */}
-        <Typography variant='h3' component='h1' className='mb-6 font-bold'>
-          The Alarming State of the Lake Victoria Basin—and Why 2025 Was a
+        <Typography variant='h1' className='mb-6 font-bold'>
+          The Alarming State of the Lake Victoria Basin and Why 2025 Was a
           Turning Point
         </Typography>
 
         {/* Summary Section */}
         <Divider className='my-6' />
-        <Typography variant='h5' component='h2' className='mb-3 font-semibold'>
+        <Typography variant='h5' className='mb-3 font-semibold'>
           Summary
         </Typography>
         <Typography variant='body1' className='mb-6'>
@@ -38,7 +38,7 @@ export default function Article3() {
           reaching a critical juncture and how new evidence-based
           recommendations offer hope for recovery.
         </Typography>
-        <Typography className='mb-4 text-gray-600 italic'>
+        <Typography color='textSecondary' className='mb-4 italic'>
           Estimated Read Time: 8 minutes
         </Typography>
 
@@ -164,7 +164,7 @@ export default function Article3() {
 
         {/* References Section */}
         <Divider className='my-6' />
-        <Typography variant='h6' component='h3' className='mb-3 font-semibold'>
+        <Typography variant='h6' className='mb-3 font-semibold'>
           References
         </Typography>
 

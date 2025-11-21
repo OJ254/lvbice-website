@@ -53,7 +53,7 @@ const StatsSection = ({ id = '', className = '' }: StatsSectionProps) => {
 
           {/* Section Header */}
           <div className='flex flex-col items-center space-y-4 text-center'>
-            <Typography variant='h5' className='font-semibold'>
+            <Typography variant='h4' className='font-semibold'>
               Key Water and Climate Realities
             </Typography>
             <Typography variant='body1' className='max-w-2xl opacity-90'>

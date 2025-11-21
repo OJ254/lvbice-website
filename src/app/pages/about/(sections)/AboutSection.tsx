@@ -25,7 +25,7 @@ const AboutSection = ({ id = '', className = '' }: AboutSectionProps) => {
           </div>
 
           {/* Title */}
-          <Typography variant='h5' className='font-semibold'>
+          <Typography variant='h4' className='font-semibold'>
             About LVBICE
           </Typography>
 

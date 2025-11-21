@@ -34,7 +34,7 @@ const ContactSection = ({ id = '', className = '' }: ContactSectionProps) => {
               ))}
             </div>
             {/* Title */}
-            <Typography variant='h5'>Contact LVBICE</Typography>
+            <Typography variant='h4'>Contact LVBICE</Typography>
 
             <Typography variant='body1' className=''>
               For any questions about registering as an attendee, sponsor,
