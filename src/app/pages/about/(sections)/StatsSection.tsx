@@ -1,13 +1,25 @@
+// src/app/pages/about/StatsSection.tsx
+// "use client" is used because this section renders interactive MUI components
+// (e.g., Typography with client-side theming) and participates in the page's
+// client-driven interactivity. Although it has no event handlers itself, making
+// it a client component keeps behavior consistent across sections.
 'use client';
 
 import { Box, Typography } from '@mui/material';
 import WaterDrop from '@/assets/images/water-drop.jpg';
 
+/**
+ * Props for StatsSection.
+ *
+ * id: Optional anchor id used for in-page navigation.
+ * className: Optional Tailwind utility classes to extend layout.
+ */
 type StatsSectionProps = {
   id?: string;
   className?: string;
 };
 
+// Display data for key figures shown in the grid.
 const stats = [
   {
     value: '42 Million',
@@ -31,12 +43,17 @@ const stats = [
   },
 ];
 
+/**
+ * StatsSection displays a themed background with an overlay and a responsive
+ * grid of headline statistics related to water/climate.
+ */
 const StatsSection = ({ id = '', className = '' }: StatsSectionProps) => {
   return (
     <Box id={id} className={`${className} flex flex-col items-center`}>
       <div
         className='flex w-full flex-col items-center justify-center bg-blue-50 bg-cover bg-center bg-blend-overlay lg:flex-row lg:items-stretch dark:bg-blue-950'
         style={{
+          // Apply a semi-transparent black gradient over the image for readable text
           backgroundImage: `linear-gradient(#00000050, #00000050), url(${WaterDrop.src})`,
         }}
       >

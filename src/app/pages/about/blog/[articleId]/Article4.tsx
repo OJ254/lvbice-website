@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownAnchorTarget
+
 'use client';
 
 import ConferenceImg from '@/assets/images/people-taking-part-high-protocol-event.jpg';

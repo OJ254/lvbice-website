@@ -1,4 +1,5 @@
 // src/app/pages/about/blog/[articleId]/Article1.tsx
+// noinspection HtmlUnknownAnchorTarget
 
 'use client';
 

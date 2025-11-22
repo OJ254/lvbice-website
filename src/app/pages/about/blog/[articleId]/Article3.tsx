@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownAnchorTarget
+
 'use client';
 
 import LakeCrisis from '@/assets/images/lake.jpg';

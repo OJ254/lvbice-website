@@ -1,3 +1,11 @@
+// "use client" tells Next.js that this component must be rendered on the client.
+// Why it's required here:
+// - We use React hooks (useState, custom useThemeToggle) which only run on the client.
+// - We access browser-only APIs (document.getElementById, window.location).
+// - We rely on interactive UI components from MUI (Button, Drawer, IconButton) that
+//   attach event handlers and require client-side interactivity.
+// Without this directive in the App Router, Next.js would treat the file as a server
+// component by default, causing runtime errors when trying to use hooks/DOM APIs.
 'use client';
 
 import React, { useState } from 'react';
@@ -16,14 +24,40 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 import WhiteLogo from '@/assets/images/LVBICE-logo-white.png';
 
+/**
+ * Props for the Header component.
+ *
+ * textColor: Tailwind text color utility classes applied to specific
+ * interactive elements (e.g., desktop nav and theme toggle) so the header
+ * can be reused across light/dark backgrounds. Defaults to 'text-white'.
+ */
 type HeaderProps = {
   textColor?: string;
 };
 
+/**
+ * Top navigation header for the site.
+ *
+ * Responsibilities:
+ * - Shows the brand logo which links to the home page.
+ * - Renders desktop navigation items that smoothly scroll to page sections
+ *   when they exist, or navigates to the About page with a hash fallback.
+ * - Provides a theme toggle (light/dark) via a shared hook.
+ * - Offers a responsive mobile drawer containing the same navigation and actions.
+ *
+ * Notes on behavior:
+ * - Smooth scrolling is done via `Element.scrollIntoView` and only when the
+ *   target section is present in the current DOM. If the element isn't found
+ *   (e.g., the user is on a different page), the handler redirects to
+ *   `/pages/about#<id>` so the target can be scrolled into view on that page.
+ */
 const Header = ({ textColor = 'text-white' }: HeaderProps) => {
+  // Access theme state and toggle function
   const { theme, toggleTheme } = useThemeToggle();
+  // State for managing the mobile drawer open/close status
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  // Handler to toggle the drawer
   const toggleDrawer = (open: boolean) => () => {
     setDrawerOpen(open);
   };
@@ -47,6 +81,9 @@ const Header = ({ textColor = 'text-white' }: HeaderProps) => {
     }
 
     // Otherwise, navigate to About page with hash
+    // This fallback is important when the user clicks a nav item from a page
+    // that doesn't contain the target section. Next.js will render the About
+    // page, and the browser will jump to the hash after navigation.
     window.location.href = `/pages/about#${id}`;
   };
 
@@ -58,8 +95,8 @@ const Header = ({ textColor = 'text-white' }: HeaderProps) => {
           <Image
             src={WhiteLogo}
             alt='LVBICE logo'
-            width={100}
-            height={100}
+            width={1000}
+            height={1000}
             className='h-auto w-28 md:w-32 lg:w-40'
             priority
           />
@@ -126,8 +163,8 @@ const Header = ({ textColor = 'text-white' }: HeaderProps) => {
           <Image
             src={WhiteLogo}
             alt='LVBICE logo'
-            width={100}
-            height={100}
+            width={1000}
+            height={1000}
             className='h-auto w-40 md:w-48'
             priority
           />

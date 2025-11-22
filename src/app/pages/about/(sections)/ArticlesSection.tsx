@@ -1,5 +1,11 @@
-// @/src/app/pages/about/(sections)/ArticlesSection.tsx
-
+// src/app/pages/about/(sections)/ArticlesSection.tsx
+// "use client" tells Next.js to render this file on the client.
+// Why it's required here:
+// - We attach click handlers to links/buttons and rely on interactive MUI components.
+// - We use React.memo and functional components that run with client interactivity.
+// - We access image .src values that are resolved at runtime for inline styles.
+// Without this directive under the App Router, using event handlers would fail
+// because server components are not interactive by default.
 'use client';
 
 import { Typography, Button } from '@mui/material';
@@ -10,16 +16,25 @@ import CopSummit from '@/assets/images/sustainable-development-goals-still-life.
 import LakeCrisis from '@/assets/images/lake.jpg';
 import ConferenceImg from '@/assets/images/people-taking-part-high-protocol-event.jpg';
 
+/**
+ * Props for ArticlesSection.
+ *
+ * id: Optional anchor id used for in-page navigation.
+ * className: Optional Tailwind utility classes to extend layout/styling.
+ */
 type ArticlesSectionProps = {
   id?: string;
   className?: string;
 };
 
+/**
+ * Article item model used to render teaser cards.
+ */
 type ArticleItem = {
   title: string;
   description: string;
-  image: any;
-  href: string;
+  image: any; // Next.js imported static image
+  href: string; // Navigates to the blog article route
 };
 
 const articlesItems: ArticleItem[] = [
@@ -58,14 +73,15 @@ const articlesItems: ArticleItem[] = [
 ];
 
 // Card component with custom image + href
+// Memoized to avoid re-rendering unchanged cards when parent updates.
 const ArticleCard = React.memo(
   ({ title, description, image, href }: ArticleItem) => (
     <a
       href={href}
-      className='flex transform flex-col items-start gap-3 rounded-lg shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-lg'
+      className='surface surface-hover flex transform flex-col items-start gap-3 rounded-lg shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-lg'
     >
       <div
-        className='flex h-40 w-full items-center justify-center rounded-t-md bg-blue-500/20 bg-cover bg-center dark:bg-blue-400/30'
+        className='flex h-40 w-full items-center justify-center rounded-t-md bg-cover bg-center'
         style={{
           backgroundImage: `url(${image.src})`,
         }}
@@ -93,6 +109,14 @@ const ArticleCard = React.memo(
   )
 );
 
+/**
+ * ArticlesSection renders a grid of recent articles/news with images and teasers.
+ *
+ * Responsibilities:
+ * - Displays a decorative header and a responsive grid of ArticleCard entries.
+ * - Uses background images via inline styles for card thumbnails.
+ * - Provides semantic anchors for smooth in-page navigation (via id prop).
+ */
 const ArticlesSection = ({ id = '', className = '' }: ArticlesSectionProps) => {
   return (
     <section

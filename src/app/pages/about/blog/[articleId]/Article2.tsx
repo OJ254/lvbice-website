@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownAnchorTarget
+
 'use client';
 
 import CopSummit from '@/assets/images/sustainable-development-goals-still-life.jpg';

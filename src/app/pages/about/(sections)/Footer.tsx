@@ -1,3 +1,8 @@
+// src/app/pages/about/Footer.tsx
+// "use client" is used because this footer renders interactive links/buttons
+// and relies on client-side interactivity (e.g., MUI Button ripples). While it
+// has no complex logic, it still benefits from being a client component for
+// consistent behavior alongside the rest of the page sections.
 'use client';
 
 import { Typography, Button } from '@mui/material';
@@ -10,11 +15,25 @@ import {
   YouTubeLogo,
 } from '@/components/ui/dataDisplay/icons';
 
+/**
+ * Props for Footer.
+ *
+ * id: Optional anchor id used for in-page navigation.
+ * className: Optional Tailwind utility classes to extend layout.
+ */
 type FooterProps = {
   id?: string;
   className?: string;
 };
 
+/**
+ * Footer renders informational content, key links, and social media icons.
+ *
+ * Responsibilities:
+ * - Displays brief about text and contact information.
+ * - Renders administrative links (e.g., Privacy Policy).
+ * - Shows social icons linking to external platforms.
+ */
 const Footer = ({ id = '', className = '' }: FooterProps) => {
   return (
     <footer

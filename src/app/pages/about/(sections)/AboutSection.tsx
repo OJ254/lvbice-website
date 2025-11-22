@@ -1,3 +1,5 @@
+// src/app/pages/about/AboutSection.tsx
+
 'use client';
 
 import { Box, Typography } from '@mui/material';

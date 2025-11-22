@@ -1,13 +1,36 @@
+// src/app/pages/about/(sections)/ThemesSection.tsx
+// "use client" is required because this section:
+// - Uses React state to control the MUI Dialog (modal) visibility.
+// - Attaches click handlers for opening/closing the modal and downloading.
+// - Renders interactive MUI components (Dialog, Button, IconButton).
 'use client';
 
-import { Typography, Button } from '@mui/material';
+import { useState } from 'react';
+import {
+  Typography,
+  Button,
+  Dialog,
+  DialogContent,
+  IconButton,
+} from '@mui/material';
 import { WeatherIcon } from '@/components/ui/dataDisplay/icons';
 import React from 'react';
 import ThemesBg from '@/assets/images/african-children-enjoying-life.jpg';
+import CloseIcon from '@mui/icons-material/Close';
 
+/**
+ * Props for ThemesSection.
+ *
+ * id: Optional anchor id used for in-page navigation.
+ * className: Optional Tailwind classes for layout/styling adjustments.
+ * fileURL: Optional URL to preview the concept paper in an inline iframe.
+ * downloadURL: Optional direct URL to start a file download in a new tab.
+ */
 type ThemesSectionProps = {
   id?: string;
   className?: string;
+  fileURL?: string;
+  downloadURL?: string;
 };
 
 type ThemeItem = {
@@ -83,7 +106,18 @@ const ThemeCard = React.memo(({ title, description }: ThemeItem) => (
   </div>
 ));
 
-const ThemesSection = ({ id = '', className = '' }: ThemesSectionProps) => {
+/**
+ * ThemesSection lists conference themes and provides access to a concept paper
+ * via inline preview (Dialog + iframe) and a direct download link.
+ */
+const ThemesSection = ({
+  id = '',
+  className = '',
+  fileURL,
+  downloadURL,
+}: ThemesSectionProps) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <section
       id={id}
@@ -118,10 +152,20 @@ const ThemesSection = ({ id = '', className = '' }: ThemesSectionProps) => {
                 LVBICE 2026 Concept Paper.pdf
               </Typography>
               <div className='mt-2 flex gap-2'>
-                <Button size='small' variant='outlined'>
+                <Button
+                  size='small'
+                  variant='outlined'
+                  onClick={() => setOpen(true)}
+                >
                   Read Online
                 </Button>
-                <Button size='small' variant='contained'>
+
+                {/* Download */}
+                <Button
+                  size='small'
+                  variant='contained'
+                  onClick={() => downloadURL && window.open(downloadURL, '_blank')}
+                >
                   Download
                 </Button>
               </div>
@@ -135,6 +179,29 @@ const ThemesSection = ({ id = '', className = '' }: ThemesSectionProps) => {
           </div>
         </div>
       </div>
+
+      {/* Online Viewer Modal: shows the concept paper in an iframe when open */}
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        maxWidth='lg'
+        fullWidth
+      >
+        <DialogContent className='relative p-0'>
+          <IconButton
+            onClick={() => setOpen(false)}
+            className='absolute top-3 right-4 z-10 rounded-none bg-blue-500 shadow'
+          >
+            <CloseIcon />
+          </IconButton>
+
+          <iframe
+            src={fileURL}
+            className='h-[80vh] w-full'
+            style={{ border: 'none' }}
+          />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

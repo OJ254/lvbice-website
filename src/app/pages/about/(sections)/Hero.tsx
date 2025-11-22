@@ -1,3 +1,8 @@
+// src/app/pages/about/Hero.tsx
+// "use client" is required because this component:
+// - Uses React state and effects to run a live countdown timer.
+// - Attaches click handlers for smooth in-page scrolling and downloading.
+// - Relies on client Date/time and interval timers which are browser-only.
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -10,6 +15,16 @@ import {
   YouTubeLogo,
 } from '@/components/ui/dataDisplay/icons';
 
+/**
+ * Props for the Hero section.
+ *
+ * eventName/eventTheme/venue/date: Displayed metadata for the event.
+ * year, month (1-based), startDate, endDate: Used to compute countdown windows.
+ * className: Tailwind classes for layout customizations.
+ * id: Anchor target for in-page navigation.
+ * textColor: Tailwind text colors for contrast on background image.
+ * downloadURL: Optional link to a downloadable concept paper or brochure.
+ */
 type HeroProps = {
   eventName: string;
   eventTheme: string;
@@ -22,6 +37,7 @@ type HeroProps = {
   className?: string;
   id?: string;
   textColor?: string;
+  downloadURL?: string;
 };
 
 const Hero = ({
@@ -36,6 +52,7 @@ const Hero = ({
   className = '',
   textColor = 'text-white',
   id = '',
+  downloadURL = '',
 }: HeroProps) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -80,6 +97,7 @@ const Hero = ({
       }
     };
 
+    // Kick off immediately, then tick once per second.
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
@@ -94,7 +112,7 @@ const Hero = ({
     { value: seconds, label: 'seconds' },
   ];
 
-  // SCROLL FUNCTION
+  // SCROLL FUNCTION: smooth-scroll to a target section if it exists.
   const scrollToSection = (id: string) => {
     const target = document.getElementById(id);
     if (!target) return;
@@ -106,9 +124,9 @@ const Hero = ({
   };
 
   const downloadConceptPaper = () => {
-    const driveFileId = 'YOUR_FILE_ID';
-    const downloadUrl = `https://drive.google.com/uc?export=download&id=${driveFileId}`;
-    window.open(downloadUrl, '_blank');
+    if (downloadURL) {
+      window.open(downloadURL, '_blank');
+    }
   };
 
   return (
@@ -249,13 +267,13 @@ const Hero = ({
               ))}
 
             {status === 'during' && (
-              <Typography variant='h3' className='font-bold text-white'>
+              <Typography variant='h1' className='font-bold text-white'>
                 Currently happening
               </Typography>
             )}
 
             {status === 'ended' && (
-              <Typography variant='h3' className='font-bold text-white'>
+              <Typography variant='h1' className='font-bold text-white'>
                 Event Ended
               </Typography>
             )}
