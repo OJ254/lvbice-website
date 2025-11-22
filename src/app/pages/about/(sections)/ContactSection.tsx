@@ -125,9 +125,9 @@ export default function ContactSection({
             <Typography variant='h4'>Contact LVBICE</Typography>
 
             <Typography variant='body1'>
-              For any questions about attending, sponsoring, or speaking at
-              LVBICE 2026, we’re here to help. Reach out anytime through the
-              form below.
+              For any questions about registering as a speaker, attendee,
+              sponsor, exhibitor, partner, or volunteer, we'd be happy to hear
+              from you. Please contact us via any of the following channels:
             </Typography>
 
             {/* Static contact details */}
