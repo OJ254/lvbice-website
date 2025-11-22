@@ -106,7 +106,7 @@ export default function Article1() {
           Digital governance platforms also play a critical role in integrating
           AI into regional management strategies. By centralizing data from
           multiple sources—government agencies, research institutions, NGOs, and
-          local communities—these platforms enable real-time monitoring,
+          local communities — these platforms enable real-time monitoring,
           reporting, and decision-making. Transparent data dashboards promote
           accountability and inform policies related to water allocation,
           fisheries management, and environmental conservation. For a
