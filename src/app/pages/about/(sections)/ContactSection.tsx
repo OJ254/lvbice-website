@@ -7,7 +7,7 @@
 // would not function on the client.
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Box, Typography, TextField, Button, Alert } from '@mui/material';
 import lake from '@/assets/images/ai-generated-3d-water.jpg';
 
@@ -35,12 +35,7 @@ export default function ContactSection({
   });
 
   const [emailError, setEmailError] = useState('');
-
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<{
-    type: 'success' | 'error';
-    msg: string;
-  } | null>(null);
 
   // Basic email pattern for instant feedback; server should still validate.
   const validateEmail = (value: string) => {
@@ -48,8 +43,24 @@ export default function ContactSection({
     return regex.test(value);
   };
 
+  // Memoize the form validation to prevent unnecessary recalculations
+  const isFormValid = useMemo(() => {
+    return (
+      form.name.trim() !== '' &&
+      form.email.trim() !== '' &&
+      form.message.trim() !== '' &&
+      validateEmail(form.email)
+    );
+  }, [form.name, form.email, form.message]);
+  const [status, setStatus] = useState<{
+    type: 'success' | 'error';
+    msg: string;
+  } | null>(null);
+
   // Submit the form to the API route. Shows a loading state and success/error.
   const handleSubmit = async () => {
+    if (!isFormValid) return;
+
     setLoading(true);
     setStatus(null);
 
@@ -190,7 +201,7 @@ export default function ContactSection({
               <Button
                 variant='contained'
                 className='w-full py-3'
-                disabled={loading}
+                disabled={!isFormValid || loading}
                 onClick={handleSubmit}
               >
                 {loading ? 'Sending...' : 'Send Message'}
