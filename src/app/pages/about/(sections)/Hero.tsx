@@ -14,6 +14,7 @@ import {
   WhatsAppLogo,
   YouTubeLogo,
 } from '@/components/ui/dataDisplay/icons';
+import 'flag-icons/css/flag-icons.min.css';
 
 /**
  * Props for the Hero section.
@@ -150,6 +151,13 @@ const Hero = ({
               >
                 <span className='font-bold'>{year} THEME:</span> {eventTheme}
               </Typography>
+              <div className='flex items-center gap-2'>
+                <span className='fi fi-ke' />
+                <span className='fi fi-ug' />
+                <span className='fi fi-tz' />
+                <span className='fi fi-rw' />
+                <span className='fi fi-bi' />
+              </div>
             </div>
 
             <div className='flex flex-col items-center justify-center gap-2 md:items-start'>

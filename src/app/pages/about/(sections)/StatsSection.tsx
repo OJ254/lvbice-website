@@ -67,7 +67,6 @@ const StatsSection = ({ id = '', className = '' }: StatsSectionProps) => {
               />
             ))}
           </div>
-
           {/* Section Header */}
           <div className='flex flex-col items-center space-y-4 text-center'>
             <Typography variant='h4' className='font-semibold'>
@@ -79,7 +78,6 @@ const StatsSection = ({ id = '', className = '' }: StatsSectionProps) => {
               including but not limited to the Lake Victoria region.
             </Typography>
           </div>
-
           {/* Stats Grid */}
           <div className='grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 xl:gap-10'>
             {stats.map((item, index) => (
