@@ -88,7 +88,7 @@ const Header = ({ textColor = 'text-white' }: HeaderProps) => {
   };
 
   return (
-    <Box className='max-w-9xl relative flex w-full items-center justify-between p-4'>
+    <Box className='max-w-9xl relative flex w-full items-center justify-between px-4'>
       {/* Logo */}
       <div className='w-full max-w-max'>
         <a href='/'>
@@ -97,7 +97,7 @@ const Header = ({ textColor = 'text-white' }: HeaderProps) => {
             alt='LVBICE logo'
             width={1000}
             height={1000}
-            className='h-auto w-24 rounded-md'
+            className='h-auto w-16 rounded-md'
             priority
           />
         </a>
