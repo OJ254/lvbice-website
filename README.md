@@ -1,4 +1,4 @@
-<img src="./src/assets/images/LVBICE-logo-blue.png" alt="LVBICE" width="25%" /> <br />
+<img src="./src/assets/images/LVBICE-logo-white.png" alt="LVBICE" width="25%" /> <br />
 # Lake Victoria Basin International Conference and Exhibition (LVBICE) 2026
 
 Official website for the Lake Victoria Basin International Conference and Exhibition (LVBICE) 2026. This platform serves as the digital hub for the conference, providing information about the event, registration details, speakers, and more.
