@@ -158,19 +158,19 @@ const About = () => {
       </section>
 
       {/* Main content */}
-      <main className='mt-56 flex w-full flex-col items-center justify-center md:mt-28'>
-        <AboutSection id='about' className='w-full scroll-mt-28' />
-        <StatsSection id='stats' className='w-full scroll-mt-28' />
+      <main className='mt-56 flex w-full flex-col items-center justify-center md:mt-20'>
+        <AboutSection id='about' className='w-full scroll-mt-20' />
+        <StatsSection id='stats' className='w-full scroll-mt-20' />
         {/*<section id='speakers'>Speakers</section>*/}
         <ThemesSection
           id='themes'
           fileURL={fileURL}
           downloadURL={downloadURL}
-          className='w-full scroll-mt-28'
+          className='w-full scroll-mt-20'
         />
-        <PartnersSection id='partners' className='w-full scroll-mt-28' />
-        <ArticlesSection id='latest-news' className='w-full scroll-mt-28' />
-        <ContactSection id='contact' className='w-full scroll-mt-28' />
+        <PartnersSection id='partners' className='w-full scroll-mt-20' />
+        <ArticlesSection id='latest-news' className='w-full scroll-mt-20' />
+        <ContactSection id='contact' className='w-full scroll-mt-20' />
       </main>
 
       <Footer className='w-full' />
