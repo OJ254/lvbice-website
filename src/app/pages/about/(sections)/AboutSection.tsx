@@ -36,11 +36,16 @@ const AboutSection = ({ id = '', className = '' }: AboutSectionProps) => {
             <Typography variant='body1'>
               The Lake Victoria Basin International Conference and Exhibition
               (LVBICE) is a premier regional forum scheduled for October 2026 at
-              the Acacia Hotel in Kisumu, Kenya. Organized by the Environmental
-              Institute of Kenya [EIK] in partnership with the public and
-              private sector, the conference brings together leaders, experts,
-              innovators, and institutions dedicated to advancing sustainable
-              development and climate resilience within the Lake Victoria Basin.
+              the Acacia Hotel in Kisumu, Kenya. The event is co-hosted by
+              Ministry of Water, Sanitation and Irrigation, Lake Victoria South
+              Water Works Development Agency, Environmental Institute of Kenya
+              -Nyanza Chapter and Centre for Humanitarian Affairs and Community
+              Development(CHACODEV), Masinde Muliro University of Science and
+              Technology, the County Government of Kisumu, Office of Deputy
+              President State Department of Devolution-Kenya. The conference
+              brings together leaders, experts, innovators, and institutions
+              dedicated to advancing sustainable development and climate
+              resilience within the Lake Victoria Basin.
             </Typography>
 
             <Typography variant='body1'>

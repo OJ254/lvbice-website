@@ -39,6 +39,7 @@ type HeroProps = {
   id?: string;
   textColor?: string;
   downloadURL?: string;
+  invitationDownloadURL: string;
 };
 
 const Hero = ({
@@ -54,6 +55,7 @@ const Hero = ({
   textColor = 'text-white',
   id = '',
   downloadURL = '',
+  invitationDownloadURL,
 }: HeroProps) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -127,6 +129,12 @@ const Hero = ({
   const downloadConceptPaper = () => {
     if (downloadURL) {
       window.open(downloadURL, '_blank');
+    }
+  };
+
+  const downloadInvitationLetter = () => {
+    if (invitationDownloadURL) {
+      window.open(invitationDownloadURL, '_blank');
     }
   };
 
@@ -288,12 +296,13 @@ const Hero = ({
           </div>
 
           {/* Call to Action */}
-          <div className='flex flex-col gap-2 md:flex-row md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8'>
+          <div className='flex flex-col gap-2 md:flex-row lg:gap-3 2xl:gap-4'>
             {[
               'Register',
               'Become a Sponsor',
               'Contact the Secretariat',
               'Download the Concept Paper',
+              'Download the Invitation Letter & Packages',
             ].map(item => (
               <Button
                 key={item}
@@ -302,6 +311,10 @@ const Hero = ({
                 onClick={() => {
                   if (item === 'Download the Concept Paper') {
                     downloadConceptPaper();
+                  } else if (
+                    item === 'Download the Invitation Letter & Packages'
+                  ) {
+                    downloadInvitationLetter();
                   } else {
                     scrollToSection('contact');
                   }

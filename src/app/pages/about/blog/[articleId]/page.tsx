@@ -9,6 +9,8 @@ import Article1 from './Article1';
 import Article2 from './Article2';
 import Article3 from './Article3';
 import Article4 from './Article4';
+import Article5 from './Article5';
+import Article6 from './Article6';
 import { ComponentType } from 'react';
 
 // Map of article slugs to their corresponding React components.
@@ -18,6 +20,8 @@ const articlesMap: Record<string, ComponentType> = {
   'cop28-cop29-east-africa': Article2,
   'lake-victoria-2025': Article3,
   'lvbice-2026': Article4,
+  'amina-mohammed-speech': Article5,
+  'lake-victoria-fishing-activities': Article6,
   // add other articles here
 };
 
@@ -45,13 +49,6 @@ export default async function ArticlePage({
   // splitting on '/': e.g., "foo/bar" → "bar".
   const pathSegments = (resolvedParams?.articleId || '').split('/');
   const slug = pathSegments[pathSegments.length - 1].toLowerCase();
-
-  // Debug logs visible on the server during development. These help verify
-  // route matching and slug mapping.
-  console.log('Article ID from params:', resolvedParams.articleId);
-  console.log('Available articles:', Object.keys(articlesMap));
-  console.log('Selected article slug:', slug);
-  console.log('Search params:', resolvedSearchParams);
 
   // Lookup the article component by slug.
   const ArticleComponent = articlesMap[slug];

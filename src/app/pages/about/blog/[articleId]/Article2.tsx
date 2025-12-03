@@ -34,11 +34,12 @@ export default function Article2() {
           Summary
         </Typography>
         <Typography variant='body1' className='mb-6'>
-          This article connects outcomes from COP28 and COP29 to the climate
-          resilience needs of the Lake Victoria Basin. It highlights global
-          climate finance commitments, methane reduction efforts, and strategies
-          for vulnerable communities—showing how these global agreements can
-          support regional water infrastructure, adaptation, and innovation.
+          The outcomes of COP28 and COP29 strengthen efforts to enhance climate
+          resilience in the Lake Victoria Basin, with global commitments on
+          climate finance, methane reduction, and support for vulnerable
+          communities offering new opportunities for improving water
+          infrastructure, advancing adaptation measures, and accelerating
+          innovation across the region.
         </Typography>
         <Typography color='textSecondary' className='mb-4 italic'>
           Estimated Read Time: 8 minutes

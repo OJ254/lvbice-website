@@ -14,6 +14,7 @@ import 'swiper/css';
 
 import CHACODEV from '@/assets/images/chacodev-logo.jpg';
 import EIK from '@/assets/images/EIK-logo.jpeg';
+import Link from 'next/link';
 
 /**
  * Props for PartnersSection.
@@ -31,6 +32,7 @@ const partners = [
   {
     image: EIK,
     name: 'Environmental Institute of Kenya [EIK] - Nyanza',
+    href: 'https://www.eik.co.ke/',
   },
   {
     image: CHACODEV,
@@ -81,14 +83,19 @@ const PartnersSection = ({ id = '', className = '' }: PartnersSectionProps) => {
             {partners.map((partner, index) => (
               <SwiperSlide key={index}>
                 <div className='flex flex-col items-center space-y-3'>
-                  <div className='relative flex aspect-square w-full max-w-xs items-center justify-center rounded-md bg-white shadow-md'>
+                  <Link
+                    href={partner.href ?? '#'}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='relative flex aspect-square w-full max-w-xs items-center justify-center rounded-md bg-white shadow-md'
+                  >
                     <Image
                       src={partner.image}
                       alt={partner.name}
                       fill
                       className='rounded-md object-contain'
                     />
-                  </div>
+                  </Link>
 
                   <Typography className='text-center'>
                     {partner.name}

@@ -34,11 +34,13 @@ export default function Article3() {
           Summary
         </Typography>
         <Typography variant='body1' className='mb-6'>
-          This article highlights findings from the Lake Victoria State of the
-          Basin Report 2025, including rising environmental degradation, climate
-          impacts, and human pressures. It also explains why the region is
-          reaching a critical juncture and how new evidence-based
-          recommendations offer hope for recovery.
+          The Lake Victoria State of the Basin Report 2025 reveals escalating
+          environmental degradation, mounting climate pressures, and
+          intensifying human impacts that are pushing the region toward a
+          critical tipping point. Despite these challenges, the report outlines
+          actionable, evidence-based strategies that can restore ecological
+          health, strengthen resilience, and support sustainable development
+          across the basin.
         </Typography>
         <Typography color='textSecondary' className='mb-4 italic'>
           Estimated Read Time: 8 minutes

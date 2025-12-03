@@ -108,11 +108,17 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Public file URLs for the ThemesSection: inline preview and direct download.
+  // Public file URLs for the Concept paper: inline preview and direct download.
   const fileURL =
-    'https://drive.google.com/file/d/1gLiIRy2qIxwfNChCndDSmhAjb1QgygGp/preview';
+    'https://drive.google.com/file/d/1-l5sfPaj--SS-FTXRdy3tWWr1QT9AuUz/preview';
   const downloadURL =
-    'https://drive.google.com/uc?export=download&id=1gLiIRy2qIxwfNChCndDSmhAjb1QgygGp';
+    'https://drive.google.com/uc?export=download&id=1-l5sfPaj--SS-FTXRdy3tWWr1QT9AuUz';
+
+  // Public file URLs for the Invitation Letter & Packages: inline preview and direct download.
+  const invitationFileURL =
+    'https://drive.google.com/file/d/1498stQAFIB9L1CvaeR3urp40-KN_5paT/preview';
+  const invitationDownloadURL =
+    'https://drive.google.com/uc?export=download&id=1498stQAFIB9L1CvaeR3urp40-KN_5paT';
 
   return (
     <div className='relative' id='about' tabIndex={-1}>
@@ -147,6 +153,7 @@ const About = () => {
           eventTheme={eventTheme}
           textColor={textColor}
           downloadURL={downloadURL}
+          invitationDownloadURL={invitationDownloadURL}
         />
       </section>
 

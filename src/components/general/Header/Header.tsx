@@ -97,7 +97,7 @@ const Header = ({ textColor = 'text-white' }: HeaderProps) => {
             alt='LVBICE logo'
             width={1000}
             height={1000}
-            className='h-auto w-28 md:w-32 lg:w-40'
+            className='h-auto w-24 rounded-md'
             priority
           />
         </a>
